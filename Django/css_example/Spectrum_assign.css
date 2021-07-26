@@ -1,0 +1,38 @@
+
+p{
+  font-size: 30px;
+  font-family: cursive;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table{
+  margin-left: 200px;
+  margin-right: 100px;
+}
+
+td{
+  height: 200px;
+  padding: 100px;
+  border: 6px solid white;
+}
+
+#col1{
+  background-color: #264653;
+}
+
+#col2{
+  background-color: #2A9D8F;
+}
+
+#col3{
+  background-color: #E9C46A;
+}
+
+#col4{
+  background-color: #F4A261;
+}
+
+#col5{
+  background-color: #E76F51;
+}

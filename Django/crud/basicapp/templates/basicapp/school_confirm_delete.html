@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Confirm Delete {{school.name}}</h1>
+    <form method="post">
+      {% csrf_token %}
+      <input type="Submit" name="" value="Delete">
+    </form>
+    <a href="{% url 'basicapp:detail' pk=school.pk %}">No</a>
+
+  </body>
+</html>

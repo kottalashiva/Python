@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2> School Details are</h2>
+      <h4>{{school_details.name}}</h4>
+      <h4>{{school_details.location}}</h4>
+      <h4>{{school_details.principal}}</h4>
+      <p> list of Students are</p>
+      {% for student in school_details.students.all %}
+      <p> <b>{{ student.name }}</b> his age is <I>{{student.age}}</I></p>
+      {% endfor %}
+
+      <div class="">
+        <a href="{% url 'basicapp:update' pk=school_details.pk %}">update School Detail</a>
+
+      </div>
+  </body>
+</html>

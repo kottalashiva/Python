@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ol>
+      {% for school in school_list %}
+      <h1><li><a href="{{school.id}}">{{school.name}}</a></li></h1>
+      {% endfor %}
+    </ol>
+
+  </body>
+</html>

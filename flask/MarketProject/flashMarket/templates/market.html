@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>Market Page</title>
+{% endblock title %}
+{% block content %}
+  <div class="row">
+    <div class="col-8">
+      <h2> Below are the list of items in the market</h2>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name </th>
+            <th scope="col">barcode</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+      <tbody>
+      {% for item in  item_data %}
+        <tr>
+            <td> {{ item.id }}</td>
+            <td> {{ item.name }}</td>
+            <td> {{ item.barcode }}</td>
+            <td> {{ item.price }}</td>
+            {% include 'includes/purchaseModal.html' %}
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infoModal-{{item.id}}">
+              MoreInfo
+            </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#purchaseModal-{{item.id}}">
+              Purchase the product
+            </button></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <p>This is for putting the items back to market</p>
+      <div class="row">
+        {% for item in owned_items %}
+        {% include 'includes/sell_modal.html' %}
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text">{{item.description}}</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sellModal-{{item.id}}">
+                Sell this item
+              </button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+
+{% endblock %}

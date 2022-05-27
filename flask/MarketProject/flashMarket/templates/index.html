@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>Market Page</title>
+{% endblock title %}
+{% block content %}
+  <div class="container-lg p-3 my-3 bg-dark text-white">
+    <p>This Is the market practice page where items will be sold or purchaed</p>
+    <p>Click the button to view the market</p>
+    <a class='form-control btn  btn-primary' href="{{ url_for('market' ) }}">Market</a>
+
+  </div>
+{% endblock content %}
